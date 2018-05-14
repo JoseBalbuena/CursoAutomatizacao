@@ -1,0 +1,18 @@
+Os comandos a serem enviados para Cisco IOS são:
+
+router bgp 100
+neighbor 12.12.12.1 remote-as 200
+network 192.168.200.0 mask 255.255.255.0
+network 12.12.12.0 mask 255.255.255.0
+network 1.1.1.0 mask 255.255.255.0
+
+Para JunOS são:
+
+set routing-options router-id 2.2.2.2
+set routing-options autonomous-system 200
+set protocols bgp group EXTERNAL-PEERS type external
+set protocols bgp group EXTERNAL-PEERS local-address 12.12.12.2
+set protocols bgp group EXTERNAL-PEERS export send-direct
+set protocols bgp group EXTERNAL-PEERS neighbor 12.12.12.1 peer-as 100
+set policy-options policy-statement send-direct term2 from protocol direct
+set policy-options policy-statement send-direct term2 then accept
