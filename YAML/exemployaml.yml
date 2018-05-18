@@ -1,0 +1,45 @@
+---
+vlans:
+ - vlan: 100
+   desc: "VLAN 100"
+ - vlan: 200
+   desc: "VLAN 100"
+ - vlan: 300
+   desc: "VLAN 100"
+ - vlan: 400
+   desc: "VLAN 100"
+
+SW1:
+  stp:
+  - vlan: 100
+    priority: 4096
+  - vlan: 300
+    priority: 4096
+  etherchannel: 
+   channelid: 1
+   interfaces: "f0/0 - f0/1"
+  vlans:
+   - vlan: 100
+     ip: "192.168.1.1"
+     sn: "255.255.255.0"
+   - vlan: 300
+     ip: "192.168.3.1"
+     sn: "255.255.255.0"
+
+SW2:
+  stp:
+  - vlan: 200
+    priority: 4096
+  - vlan: 400
+    priority: 4096
+  etherchannel: 
+   channelid: 1
+   interfaces: "f0/0 - f0/1"
+  vlans:
+   - vlan: 200
+     ip: "192.168.2.1"
+     sn: "255.255.255.0"
+   - vlan: 400
+     ip: "192.168.4.1"
+     sn: "255.255.255.0"
+...
