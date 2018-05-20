@@ -1,0 +1,20 @@
+ntpservers:
+ - ntpserver: 4.4.4.4
+ - ntpserver: 5.5.5.5
+
+R1:
+ ospf:
+  routerid: 1.1.1.1
+  interfaces:
+   - interface: "f0/0"
+     area: 0
+   - interface: "lo0"
+     area: 1
+R2:
+ ospf:
+  routerid: 2.2.2.2
+  interfaces:
+   - interface: "f0/0"
+     area: 0
+   - interface: "lo0"
+     area: 2
