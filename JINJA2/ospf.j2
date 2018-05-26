@@ -1,8 +1,15 @@
+{% for interface in router.ospf.interfaces %}
+{% if router.so == 'ios' %}
 router ospf 1
 router-id {{ router.ospf.routerid }}
 !
-{% for interface in router.ospf.interfaces %}
 interface {{ interface.interface }}
 ip ospf 1 area {{ interface.area }}
-{% endfor %}
 !
+{% endif %}
+{% if router.so == 'junos' %}
+set routing-options router-id {{ router.ospf.routerid }}
+set protocols ospf area 0.0.0.{{ interface.area }} interface {{ interface.interface }}
+{% endif %}
+{% endfor %}
+
