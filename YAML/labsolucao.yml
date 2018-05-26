@@ -4,6 +4,7 @@ ntpservers:
  - ntpserver: 5.5.5.5
 
 R1:
+ so: "ios"
  ospf:
   routerid: 1.1.1.1
   interfaces:
@@ -12,6 +13,7 @@ R1:
    - interface: "lo0"
      area: 1
 R2:
+ so: "junos"
  ospf:
   routerid: 2.2.2.2
   interfaces:
