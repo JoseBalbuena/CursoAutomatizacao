@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import yaml
 from pprint import pprint
 
