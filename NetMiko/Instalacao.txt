@@ -1,2 +1,2 @@
 #Instalacao Netmiko via PIP
-sudo pip install netmiko
+sudo pip3 install netmiko
