@@ -39,7 +39,7 @@ def enviecomandoeprintaresultado(command,client_shell):
 #MAIN
 
 #Definicao dos parametros de conexao do roteador
-R1={'ip':'192.168.200.1','user':'automatizacao','pass':'automatizacao'}
+R1={'ip':'192.168.200.1','user':'paramiko','pass':'paramiko'}
 
 #Instancia um ojeto SSH
 client_ssh=paramiko.SSHClient()
