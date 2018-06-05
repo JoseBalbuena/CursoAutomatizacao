@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 from netmiko import ConnectHandler
 
@@ -41,7 +41,7 @@ for router in MyRouters:
    comandosdeconf.append(line2)
  print("------------------------------------------------------------")
  print("Enviandos os seguintes comandos para %s" % router['hostname'])
- print comandosdeconf 
+ print(comandosdeconf) 
 
  #Enviar os comandos de configuracao
  if router['so'] == 'cisco_ios' :
