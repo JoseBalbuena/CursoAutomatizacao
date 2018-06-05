@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 #####################################################
 # NAPALM EXEMPLO DE USO
@@ -45,7 +45,7 @@ for router in MyRouters:
  print("--------------------------------------")
  print("Diferencas em %s" % router['hostname'])
  print("--------------------------------------")
- print output
+ print(output)
 
  #Aplicas as modificacoes
  device.commit_config()
