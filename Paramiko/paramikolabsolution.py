@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 #############################################################
 # LABORATORIO 9 - UTILIZANDO PARAMIKO
