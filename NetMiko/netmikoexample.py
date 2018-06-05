@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 from netmiko import ConnectHandler
 
@@ -29,7 +29,7 @@ for router in MyRouters:
   fh.write(output)
  #Configurando os roteadores e imprime a saida da configuracao
  output=router_connect.send_config_set(router['configure'])
- print output
+ print(output)
  #Saio do enable se o roteador eh ios
  if router['so'] == 'cisco_ios' :
   output=router_connect.send_command('wr')
@@ -39,7 +39,7 @@ for router in MyRouters:
  else:
   # Se o roteador eh Juniper mando um commit
   output=router_connect.commit(and_quit=True)
-  print output
+  print(output)
 
  #Fecho a conexao
  router_connect.disconnect()
