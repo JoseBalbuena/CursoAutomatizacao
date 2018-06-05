@@ -33,7 +33,7 @@ for router in MyRouters:
  #Saio do enable se o roteador eh ios
  if router['so'] == 'cisco_ios' :
   output=router_connect.send_command('wr')
-  print output
+  print(output)
   #Saio do modo enable
   router_connect.exit_enable_mode()
  else:
