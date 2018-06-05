@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 #------------------------------------------------------------
 #CODIGO EXEMPLO UTILIZACAO PARAMIKO PARA COLETA DE INFORMACAO
@@ -33,7 +33,7 @@ def enviecomandoeprintaresultado(command,client_shell):
    break
 
  #Imprime saida 
- print output 
+ print(output) 
 
 
 #MAIN
