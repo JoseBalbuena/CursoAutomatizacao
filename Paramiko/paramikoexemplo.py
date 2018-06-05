@@ -39,7 +39,7 @@ def enviecomandoeprintaresultado(command,client_shell):
 #MAIN
 
 #Definicao dos parametros de conexao do roteador
-R1={'ip':'192.168.200.1','user':'paramiko','pass':'paramiko'}
+R1={'ip':'192.168.200.1','user':'paramiko','pass':'paramiko','secret':'cisco'}
 
 #Instancia um ojeto SSH
 client_ssh=paramiko.SSHClient()
@@ -53,11 +53,18 @@ client_ssh.connect(R1['ip'],username=R1['user'],password=R1['pass'])
 #Invocamos uma shell interativa
 client_shell=client_ssh.invoke_shell()
 
-#Enviamos comandos 
+#Enviamos comandos
 command="terminal length 0\n"
+enviecomandoeprintaresultado(command,client_shell)
+command="enable\n"
+enviecomandoeprintaresultado(command,client_shell)
+command=R1['secret'] + '\n'
 enviecomandoeprintaresultado(command,client_shell)
 command="sh run\n"
 enviecomandoeprintaresultado(command,client_shell)
+command="exit\n"
+enviecomandoeprintaresultado(command,client_shell)
+
 
 #Fecha Conexao
 client_ssh.close()
